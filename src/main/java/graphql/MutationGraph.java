@@ -36,11 +36,6 @@ public class MutationGraph implements GraphQLRootResolver {
         return uebRepo.updateUniteEnseignement(code, updatedUE);
     }
 
-    // Récuperation d'une unite d'enseignement par son code
-    public UniteEnseignement getUEByCode(int code) {
-        return uebRepo.getUEByCode(code);
-    }
-
     /**
      * ============ Les fonctions de module ============
      */
@@ -59,10 +54,5 @@ public class MutationGraph implements GraphQLRootResolver {
     // Modification d'un module
     public boolean updateModule(String matricule, Module updatedModule) {
         return mbRepo.updateModule(matricule, updatedModule);
-    }
-
-    // Récuperation d'un module par son matricule
-    public Module getModuleByMatricule(String matricule) {
-        return mbRepo.getModuleByMatricule(matricule);
     }
 }

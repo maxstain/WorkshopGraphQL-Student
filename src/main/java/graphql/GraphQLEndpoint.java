@@ -3,8 +3,8 @@ package graphql;
 import com.coxautodev.graphql.tools.SchemaParser;
 import graphql.schema.GraphQLSchema;
 import graphql.servlet.SimpleGraphQLServlet;
-import repository.UniteEnseignementBusiness;
 import repository.ModuleBusiness;
+import repository.UniteEnseignementBusiness;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -19,7 +19,7 @@ public class GraphQLEndpoint extends SimpleGraphQLServlet {
         ModuleBusiness mbRepo = new ModuleBusiness();
         UniteEnseignementBusiness UEBRepo = new UniteEnseignementBusiness();
         return SchemaParser.newParser()
-                .file("schema.graphqls")
+                .file("schemas.graphql")
                 .resolvers(new QueryGraph(mbRepo, UEBRepo),
                         new MutationGraph(mbRepo, UEBRepo)
                 ).build().makeExecutableSchema();
