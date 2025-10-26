@@ -1,9 +1,9 @@
 type UniteEnseignement {
-    code: Int!
-    domaine: String!
-    responsable: String!
-    credits: Int!
-    semestre: Int!
+    code: Int
+    domaine: String
+    responsable: String
+    credits: Int
+    semestre: Int
 }
 enum TypeModule {
     TRANSVERSAL
@@ -11,29 +11,29 @@ enum TypeModule {
     RECHERCHE
 }
 type Module {
-    matricule: String!
-    nom: String!
-    coefficient: Int!
-    volumeHoraire: Int!
-    type: TypeModule!
+    matricule: String
+    nom: String
+    coefficient: Int
+    volumeHoraire: Int
+    type: TypeModule
     uniteEnseignement: UniteEnseignement
 }
 
 
 type QueryGraph {
-    allModules: [Module!]
-    moduleById(id: ID!): Module
+    allModules: [Module]
+    moduleById(id: ID): Module
     allUnites: [UniteEnseignement]
-    uniteById(id: ID!): UniteEnseignement
+    uniteById(id: ID): UniteEnseignement
 }
 
 type MutationGraph {
-    createModule(matricule: ID!, nom: String!, coefficient: Int!, volumeHoraire: Int!, type: String!): Module
-    updateModule(id: ID!, name: String, coefficient: Int): Module
-    deleteModule(id: ID!): Boolean
-    createUniteEnseignement(code: ID!, domain: String!, responsable: String!, credits:Int!, semestre: Int!): UniteEnseignement
-    updateUniteEnseignement(id: ID!, name: String): UniteEnseignement
-    deleteUniteEnseignement(id: ID!): Boolean
+    createModule(matricule: ID, nom: String, coefficient: Int, volumeHoraire: Int, type: String): Module
+    updateModule(id: ID, name: String, coefficient: Int): Module
+    deleteModule(id: ID): Boolean
+    createUniteEnseignement(code: ID, domain: String, responsable: String, credits:Int, semestre: Int): UniteEnseignement
+    updateUniteEnseignement(id: ID, name: String): UniteEnseignement
+    deleteUniteEnseignement(id: ID): Boolean
 }
 
 schema {
