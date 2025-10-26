@@ -7,7 +7,11 @@ public class Module {
     private int volumeHoraire;
     private TypeModule type;
     private UniteEnseignement uniteEnseignement; // Référence vers l'UE associée
-    public Module(){}
+
+
+    public Module() {
+    }
+
     // Constructeur
     public Module(String matricule, String nom, int coefficient, int volumeHoraire, TypeModule type) {
         this.matricule = matricule;
@@ -16,14 +20,16 @@ public class Module {
         this.volumeHoraire = volumeHoraire;
         this.type = type;
     }
+
     public Module(String matricule, String nom, int coefficient, int volumeHoraire, TypeModule type, UniteEnseignement uniteEnseignement) {
         this.matricule = matricule;
         this.nom = nom;
         this.coefficient = coefficient;
         this.volumeHoraire = volumeHoraire;
         this.type = type;
-        this.uniteEnseignement=uniteEnseignement;
+        this.uniteEnseignement = uniteEnseignement;
     }
+
     // Enumération TypeModule
     public enum TypeModule {
         TRANSVERSAL,
