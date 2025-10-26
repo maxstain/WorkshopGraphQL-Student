@@ -20,14 +20,14 @@ type Module {
 }
 
 
-type Query {
+type QueryGraph {
     allModules: [Module!]
     moduleById(id: ID!): Module
     allUnites: [UniteEnseignement]
     uniteById(id: ID!): UniteEnseignement
 }
 
-type Mutation {
+type MutationGraph {
     addModule(matricule: ID!, nom: String!, coefficient: Int!, volumeHoraire: Int!, type: String!): Module
     updateModule(id: ID!, name: String, coefficient: Int): Module
     deleteModule(id: ID!): Boolean
@@ -37,6 +37,6 @@ type Mutation {
 }
 
 schema {
-    query: Query
-    mutation: Mutation
+    query: QueryGraph
+    mutation: MutationGraph
 }
