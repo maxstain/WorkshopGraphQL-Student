@@ -28,12 +28,12 @@ type QueryGraph {
 }
 
 type MutationGraph {
-    addModule(matricule: ID!, nom: String!, coefficient: Int!, volumeHoraire: Int!, type: String!): Module
+    createModule(matricule: ID!, nom: String!, coefficient: Int!, volumeHoraire: Int!, type: String!): Module
     updateModule(id: ID!, name: String, coefficient: Int): Module
     deleteModule(id: ID!): Boolean
-    addUnite(code: ID!, domain: String!, responsable: String!, credits:Int!, semestre: Int!): UniteEnseignement
-    updateUnite(id: ID!, name: String): UniteEnseignement
-    deleteUnite(id: ID!): Boolean
+    createUniteEnseignement(code: ID!, domain: String!, responsable: String!, credits:Int!, semestre: Int!): UniteEnseignement
+    updateUniteEnseignement(id: ID!, name: String): UniteEnseignement
+    deleteUniteEnseignement(id: ID!): Boolean
 }
 
 schema {
