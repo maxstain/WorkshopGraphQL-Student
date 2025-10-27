@@ -8,7 +8,6 @@ import repository.UniteEnseignementBusiness;
 
 import javax.servlet.annotation.WebServlet;
 
-
 @WebServlet(urlPatterns = "/graphql")
 public class GraphQLEndpoint extends SimpleGraphQLServlet {
     public GraphQLEndpoint() {
@@ -19,7 +18,7 @@ public class GraphQLEndpoint extends SimpleGraphQLServlet {
         ModuleBusiness mbRepo = new ModuleBusiness();
         UniteEnseignementBusiness UEBRepo = new UniteEnseignementBusiness();
         return SchemaParser.newParser()
-                .file("schemas.graphql")
+                .file("schemas.graphqls")
                 .resolvers(new QueryGraph(mbRepo, UEBRepo),
                         new MutationGraph(mbRepo, UEBRepo)
                 ).build().makeExecutableSchema();
