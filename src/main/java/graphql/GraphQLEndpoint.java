@@ -18,7 +18,7 @@ public class GraphQLEndpoint extends SimpleGraphQLServlet {
         ModuleBusiness mbRepo = new ModuleBusiness();
         UniteEnseignementBusiness UEBRepo = new UniteEnseignementBusiness();
         return SchemaParser.newParser()
-                .file("schemas.graphqls")
+                .file("schema.graphqls")
                 .resolvers(new QueryGraph(mbRepo, UEBRepo),
                         new MutationGraph(mbRepo, UEBRepo)
                 ).build().makeExecutableSchema();

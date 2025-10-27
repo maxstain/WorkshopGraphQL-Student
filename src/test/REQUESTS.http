@@ -1,0 +1,16 @@
+POST http://localhost:5003/WorkshopGraphQL_war_exploded/graphql
+Content-Type: application/graphql
+
+mutation {
+  createUniteEnseignement(
+    code: "101",
+    domain: "Computer Science",
+    responsable: "Dr. Ben Salem",
+    credits: 6,
+    semestre: 1
+  ) {
+    code
+    domaine
+    responsable
+  }
+}
