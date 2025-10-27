@@ -4,4 +4,5 @@
 Firas Chabchoub
 
 ## Screenshots
-![API Error](./screenshots/API%20Error.png)
+* ### Errors:
+* ![API Error](./screenshots/API%20Error.png)
