@@ -14,12 +14,19 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
+        <!-- Embedded Jetty for standalone entry point -->
         <dependency>
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>jakarta.servlet-api</artifactId>
-            <version>6.0.0</version>
-            <scope>provided</scope>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>9.4.54.v20240208</version>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-servlet</artifactId>
+            <version>9.4.53.v20231009</version>
+        </dependency>
+
+        <!-- GraphQL Java stack (javax.servlet based) -->
         <dependency>
             <groupId>com.graphql-java</groupId>
             <artifactId>graphql-java-servlet</artifactId>
@@ -35,10 +42,12 @@
             <artifactId>graphql-java-tools</artifactId>
             <version>3.2.0</version>
         </dependency>
+
+        <!-- Use javax.servlet API; do not mix with jakarta for this stack -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.0.1</version>
+            <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
